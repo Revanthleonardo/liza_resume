@@ -144,8 +144,10 @@
                 </a>
                 
                 <!-- Mobile Hamburger -->
-                <button id="mobile-menu-btn" class="md:hidden w-11 h-11 flex items-center justify-center text-4xl text-pink-600 active:scale-90">
-                    ☰
+                <!-- Replace the existing mobile button with this -->
+                <button id="mobile-menu-btn" 
+                    class="md:hidden w-11 h-11 flex items-center justify-center text-4xl text-pink-600 active:scale-90">
+                     ☰
                 </button>
             </div>
         </div>
@@ -416,18 +418,21 @@
 
     <script>
         // Mobile menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const btn = document.getElementById('mobile-menu-btn');
-            if (menu.classList.contains('hidden')) {
-                menu.style.display = 'block';
-                btn.innerHTML = '✕';
-            } else {
-                menu.style.display = 'none';
-                btn.innerHTML = '☰';
-            }
-            menu.classList.toggle('hidden');
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            mobileBtn.innerHTML = '✕';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileBtn.innerHTML = '☰';
         }
+    }
+
+    // Attach click listener
+    mobileBtn.addEventListener('click', toggleMobileMenu);
 
         // Form
         document.getElementById('contact-form').addEventListener('submit', function(e) {
