@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elegant Professional CV – Sureka Elezabath">
+    <title>Sureka Elezabath | CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500&amp;display=swap');
+        
+        :root { --navy: #0f172a; }
+        
+        * { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-duration: 200ms; }
+        
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .heading { font-family: 'Playfair Display', sans-serif; }
+        
+        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
+        
+        /* Ultra-mobile friendly adjustments */
+        .mobile-hero-text { font-size: 2.25rem; line-height: 1.1; }
+        @media (min-width: 640px) { .mobile-hero-text { font-size: 3rem; } }
+        
+        .section-padding { padding-top: 3rem; padding-bottom: 3rem; }
+        @media (min-width: 768px) { .section-padding { padding-top: 4rem; padding-bottom: 4rem; } }
+        
+        /* Mobile menu animation */
+        .mobile-menu {
+            animation: slideDown 0.3s ease forwards;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media print {
+            .no-print { display: none !important; }
+            .hero-bg { background: none !important; color: #0f172a !important; }
+            .hero-bg * { color: #0f172a !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 no-print">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-[#0f172a] text-white rounded-2xl flex items-center justify-center text-3xl font-bold">S</div>
+                <h1 class="text-2xl heading tracking-tight">Sureka Elezabath</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-[#0f172a]">About</a>
+                <a href="#expertise" class="hover:text-[#0f172a]">Expertise</a>
+                <a href="#experience" class="hover:text-[#0f172a]">Experience</a>
+                <a href="#portfolio" class="hover:text-[#0f172a]">Portfolio</a>
+                <a href="#credentials" class="hover:text-[#0f172a]">Credentials</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="hamburger" class="md:hidden text-3xl text-[#0f172a] p-2">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-4 py-6 mobile-menu">
+            <div class="flex flex-col gap-y-5 text-base font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="py-3">Vision &amp; About</a>
+                <a href="#expertise" onclick="toggleMobileMenu()" class="py-3">Areas of Expertise</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="py-3">Professional Experience</a>
+                <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3">Training Portfolio</a>
+                <a href="#credentials" onclick="toggleMobileMenu()" class="py-3">Certifications &amp; Education</a>
+                
+                <div class="pt-6 border-t">
+                    <a href="mailto:lizacoach26@gmail.com" 
+                       class="block text-center bg-[#0f172a] text-white py-4 rounded-3xl font-medium text-base">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="hero" class="hero-bg text-white py-10 md:py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-12 gap-8 items-center">
+            <!-- Photo -->
+            <div class="md:col-span-4 flex justify-center">
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-8 border-white/30 shadow-2xl">
+                    <img src="https://picsum.photos/id/1011/800/800" alt="Sureka Elezabath" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Content -->
+            <div class="md:col-span-8 text-center md:text-left">
+                <h1 class="mobile-hero-text heading tracking-[-1.5px] leading-none">Sureka Elezabath</h1>
+                <p class="mt-4 text-lg md:text-xl max-w-lg mx-auto md:mx-0 text-slate-200">
+                    Life Coach • Internationally Certified Games-Based Trainer • POSH Facilitator • NLP Trainer • Career Counsellor
+                </p>
+                
+                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-4 text-base">
+                    <a href="tel:+918248567778" class="flex items-center gap-2 text-base"><i class="fa-solid fa-phone"></i> +91 82485 67778</a>
+                    <a href="mailto:lizacoach26@gmail.com" class="flex items-center gap-2 text-base"><i class="fa-solid fa-envelope"></i> lizacoach26@gmail.com</a>
+                    <span class="flex items-center gap-2 text-base"><i class="fa-solid fa-location-dot"></i> Coimbatore, India</span>
+                </div>
+                
+                <div class="mt-10">
+                    <a href="#contact" 
+                       class="inline-flex items-center gap-3 bg-white text-[#0f172a] px-8 h-12 rounded-3xl font-medium text-base hover:shadow-xl active:scale-95">
+                        Schedule a Conversation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- VISION -->
+    <section id="about" class="section-padding max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-12 gap-8 items-start">
+            <div class="md:col-span-4">
+                <h2 class="text-3xl md:text-4xl heading leading-tight">Vision</h2>
+            </div>
+            <div class="md:col-span-8 text-slate-600 text-[17px] leading-relaxed">
+                To empower clients with clarity, ownership and sustainable growth in life and career. 
+                I train individuals and organizations for the roles they hold today and the ones they aspire to tomorrow — 
+                through life skills, leadership and personal development.
+            </div>
+        </div>
+        
+        <!-- Personality -->
+        <div class="mt-12 flex flex-wrap gap-4 text-sm justify-center md:justify-start">
+            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-handshake text-[#0f172a]"></i> Approachable</span>
+            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-heart text-[#0f172a]"></i> Empathetic</span>
+            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-fire text-[#0f172a]"></i> Enthusiastic</span>
+            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-face-smile text-[#0f172a]"></i> Humorous</span>
+            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-clock text-[#0f172a]"></i> Patient</span>
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="bg-white section-padding">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl heading mb-8">Areas of Expertise</h2>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Communication &amp; Interpersonal Skills</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Decision Making &amp; Problem Solving</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Creative &amp; Critical Thinking</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Self-Awareness &amp; Empathy</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Assertiveness &amp; Resilience</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Goal Setting &amp; Focus</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Time &amp; Stress Management</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Conflict Resolution</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Charismatic Leadership</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Team Building &amp; Collaboration</span>
+                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Self-Motivation &amp; Adaptability</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section-padding max-w-5xl mx-auto px-4 sm:px-6 bg-slate-50">
+        <h2 class="text-3xl md:text-4xl heading mb-10">Experience</h2>
+        
+        <div class="space-y-8">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
+                <div>
+                    <h3 class="font-medium">Business Development &amp; Customer Relationship Manager</h3>
+                    <p class="text-slate-500 text-sm">Various organizations</p>
+                </div>
+                <p class="text-sm font-medium text-slate-500">1 year</p>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
+                <div>
+                    <h3 class="font-medium">Life Skills Trainer</h3>
+                    <p class="text-slate-500 text-sm">Only Success Leadership Academy</p>
+                </div>
+                <p class="text-sm font-medium text-slate-500">3 years</p>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
+                <div>
+                    <h3 class="font-medium">Head of Training &amp; Development</h3>
+                    <p class="text-slate-500 text-sm">Achievers Training Institute (ATI)</p>
+                </div>
+                <p class="text-sm font-medium text-slate-500">3 years</p>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
+                <div>
+                    <h3 class="font-medium">Freelance Life Skills &amp; Leadership Trainer</h3>
+                    <p class="text-slate-500 text-sm">Schools, Colleges &amp; Corporates</p>
+                </div>
+                <p class="text-sm font-medium text-slate-500">5 years</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section-padding max-w-5xl mx-auto px-4 sm:px-6">
+        <h2 class="text-3xl md:text-4xl heading mb-8">Training Portfolio</h2>
+        <ul class="grid md:grid-cols-2 gap-6 text-slate-600 text-[15px]">
+            <li class="flex gap-4"><span class="font-medium">•</span> Women Empowerment &amp; Leadership – SDNB Vaishnav College (2025–26)</li>
+            <li class="flex gap-4"><span class="font-medium">•</span> Workplace Ethics &amp; POSH Compliance – Biometrics</li>
+            <li class="flex gap-4"><span class="font-medium">•</span> Strategic Visioning &amp; Goal Alignment – Biometrics Chennai</li>
+            <li class="flex gap-4"><span class="font-medium">•</span> Sales Effectiveness &amp; Customer Engagement – DAC Construction</li>
+            <li class="flex gap-4"><span class="font-medium">•</span> Team Dynamics &amp; Outbound Learning – Mount Olive &amp; LIBA</li>
+            <li class="flex gap-4"><span class="font-medium">•</span> Professional Skills &amp; Behavioral Competency – Multiple Colleges</li>
+        </ul>
+    </section>
+
+    <!-- CREDENTIALS -->
+    <section id="credentials" class="section-padding max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl md:text-4xl heading mb-8">Certifications</h2>
+                <ul class="space-y-6 text-slate-600 text-[15px]">
+                    <li class="flex gap-4"><span class="font-medium">•</span> International Games-Based Learning Facilitator</li>
+                    <li class="flex gap-4"><span class="font-medium">•</span> Master Practitioner – Neuro-Linguistic Programming (NLP)</li>
+                    <li class="flex gap-4"><span class="font-medium">•</span> POSH &amp; POCSO Certified Trainer &amp; Facilitator</li>
+                    <li class="flex gap-4"><span class="font-medium">•</span> Certified REBT, TA, Gestalt &amp; CBT Practitioner</li>
+                    <li class="flex gap-4"><span class="font-medium">•</span> Expressive Arts &amp; Play Therapy</li>
+                    <li class="flex gap-4"><span class="font-medium">•</span> Certified Career Counsellor</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="text-3xl md:text-4xl heading mb-8">Education</h2>
+                <ul class="space-y-6 text-slate-600 text-[15px]">
+                    <li class="flex gap-4"><span class="font-medium">•</span> Master of Social Work (HR)</li>
+                    <li class="flex gap-4"><span class="font-medium">•</span> PG Diploma in Psychotherapy and Life Coaching</li>
+                    <li class="flex gap-4"><span class="font-medium">•</span> Bachelor of Computer Applications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="contact" class="bg-[#0f172a] text-white py-12 md:py-20 text-center">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl heading">Let’s create impact together</h2>
+            <p class="mt-4 text-slate-300">Corporate training • Leadership programmes • 1:1 coaching • Online &amp; in-person</p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+918248567778" 
+                   class=" lg:px-4 flex-1 sm:flex-none flex justify-center items-center gap-3 bg-white text-[#0f172a] h-14 rounded-3xl font-medium text-base">
+                    <i class="fa-solid fa-phone"></i> Call +91 82485 67778
+                </a>
+                <a href="mailto:lizacoach26@gmail.com" 
+                   class="lg:px-4 flex-1 sm:flex-none flex justify-center items-center gap-3 border border-white h-14 rounded-3xl font-medium text-base">
+                    <i class="fa-solid fa-envelope"></i> Write to me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-8 text-center text-xs text-slate-400 no-print">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            © 2026 Sureka Elezabath • Coimbatore, India
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('hamburger');
+            menu.classList.toggle('hidden');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.innerHTML = `<i class="fa-solid fa-bars"></i>`;
+            } else {
+                icon.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            hamburger.addEventListener('click', toggleMobileMenu);
+            
+            console.log('%c✅ Now fully mobile-friendly elegant CV for Sureka Elezabath', 'background:#0f172a;color:#fff;padding:2px 8px;border-radius:9999px');
+        });
+    </script>
+</body>
+</html>
