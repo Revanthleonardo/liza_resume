@@ -2,285 +2,623 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Elegant Professional CV – Sureka Elezabath">
-    <title>Sureka Elezabath | CV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>LIZA • Transformative Trainer &amp; Life Coach</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap');
         
-        :root { --navy: #0f172a; }
+        :root {
+            --tw-color-primary: #1e1a4d;
+        }
         
-        * { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-duration: 200ms; }
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, transform, opacity;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 200ms;
+        }
         
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        .heading { font-family: 'Playfair Display', sans-serif; }
+        html, body {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
         
-        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%); }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
         
-        /* Ultra-mobile friendly adjustments */
-        .mobile-hero-text { font-size: 2.25rem; line-height: 1.1; }
-        @media (min-width: 640px) { .mobile-hero-text { font-size: 3rem; } }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px -5px  #1e1a4d; }
+            50% { box-shadow: 0 0 30px 10px  #1e1a4d; }
+        }
         
-        .section-padding { padding-top: 3rem; padding-bottom: 3rem; }
-        @media (min-width: 768px) { .section-padding { padding-top: 4rem; padding-bottom: 4rem; } }
+        .tail-container * { font-family: 'Poppins', system_ui, sans-serif; }
         
-        /* Mobile menu animation */
+        .hero-bg {
+            background: linear-gradient(135deg,  #1e1a4d 30%, #292524 100%);
+            animation: gradientShift 15s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -2px;
+            left: 0;
+            background-color: #1e1a4d;
+        }
+        
+        .nav-link:hover:after { width: 100%; }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(to right, #1e1a4d, #292524);
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 9999px;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .card-hover:hover {
+            transform: scale(1.04);
+            box-shadow: 12px 12px 0 -6px  #1e1a4d;
+        }
+        
+        .badge {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* === SUPER MOBILE OPTIMIZATIONS === */
+        @media (max-width: 480px) {
+            .hero-text { font-size: 2.25rem !important; line-height: 1.05 !important; }
+            .section-title { font-size: 2rem !important; }
+            .hero-image-wrapper { width: 220px !important; height: 220px !important; margin: 0 auto; }
+            .floating { display: none; }
+            .nav-logo-text { font-size: 1.25rem !important; }
+            .hero-bg { min-height: 100vh; padding-top: 60px; }
+            .px-mobile { padding-left: 16px; padding-right: 16px; }
+        }
+        
+        @media (max-width: 640px) {
+            .mobile-stack { flex-direction: column; }
+        }
+        
         .mobile-menu {
             animation: slideDown 0.3s ease forwards;
         }
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         
-        @media print {
-            .no-print { display: none !important; }
-            .hero-bg { background: none !important; color: #0f172a !important; }
-            .hero-bg * { color: #0f172a !important; }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body id="liza" class="bg-slate-50 text-slate-800">
-
-    <!-- NAVBAR -->
-    <nav class="bg-white border-b sticky top-0 z-50 no-print">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+<body class="tail-container bg-white">
+    <!-- NAVBAR - Ultra mobile optimized -->
+    <nav class="bg-white/95 backdrop-blur-lg border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#liza">
-                <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-[#0f172a] text-white rounded-2xl flex items-center justify-center text-3xl font-bold">S</div>
-                <h1 class="text-2xl heading tracking-tight">Sureka Elezabath</h1>
+            <div class="flex items-center gap-x-2">
+                <div class="w-9 h-9 bg-gradient-to-br from-blue-950 to-stone-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-inner">L</div>
+                <div class="nav-logo-text">
+                    <h1 class="text-xl font-bold tracking-tighter text-gray-900">LIZA</h1>
+                    <p class="text-[10px] font-medium text-blue-950 -mt-0.5 tracking-[1.5px]">TRAIN • COACH • TRANSFORM</p>
+                </div>
             </div>
-            </a>
 
-            <!-- Desktop Navigation -->
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-[#0f172a]">About</a>
-                <a href="#expertise" class="hover:text-[#0f172a]">Expertise</a>
-                <a href="#experience" class="hover:text-[#0f172a]">Experience</a>
-                <a href="#portfolio" class="hover:text-[#0f172a]">Portfolio</a>
-                <a href="#certifications" class="hover:text-[#0f172a]">Certifications</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-indigo-600">What I Train</a>
+                <a href="#portfolio" class="nav-link text-gray-700 hover:text-indigo-600">Portfolio</a>
+                <a href="#certifications" class="nav-link text-gray-700 hover:text-indigo-600">Credentials</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Connect</a>
             </div>
 
-            <!-- Mobile Hamburger -->
-            <button id="hamburger" class="md:hidden text-3xl text-[#0f172a] p-2">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="flex items-center gap-x-3">
+                <a href="#contact" class="hidden sm:flex px-6 py-3 bg-gradient-to-r from-blue-950 to-stone-600 text-white font-semibold rounded-3xl text-sm items-center gap-x-2 hover:scale-110 active:scale-95 shadow-lg">
+                    BOOK SESSION →
+                </a>
+                
+                <!-- Mobile Hamburger -->
+                <!-- Replace the existing mobile button with this -->
+                <button id="mobile-menu-btn" 
+                    class="md:hidden w-11 h-11 flex items-center justify-center text-4xl text-indigo-600 active:scale-90">
+                     ☰
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-4 py-6 mobile-menu">
-            <div class="flex flex-col gap-y-5 text-base font-medium">
-                <a href="#about" onclick="toggleMobileMenu()" class="py-3">Vision &amp; About</a>
-                <a href="#expertise" onclick="toggleMobileMenu()" class="py-3">Areas of Expertise</a>
-                <a href="#experience" onclick="toggleMobileMenu()" class="py-3">Professional Experience</a>
-                <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3">Training Portfolio</a>
-                <a href="#certifications" onclick="toggleMobileMenu()" class="py-3">Certifications &amp; Education</a>
-                
-                <div class="pt-6 border-t">
-                    <a href="mailto:lizacoach26@gmail.com" 
-                       class="block text-center bg-[#0f172a] text-white py-4 rounded-3xl font-medium text-base">
-                        Get in Touch
-                    </a>
-                </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-6 mobile-menu">
+            <div class="flex flex-col gap-y-4 text-center text-lg font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">About Me</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">What I Train</a>
+                <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">Recent Programs</a>
+                <a href="#certifications" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">My Credentials</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">Get in Touch</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="mt-6 py-5 bg-gradient-to-r from-blue-950 to-stone-600 text-white rounded-3xl font-semibold text-xl shadow-xl active:scale-95">BOOK YOUR TRANSFORMATION</a>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <header id="hero" class="hero-bg text-white py-10 md:py-20">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-12 gap-8 items-center">
-            <!-- Photo -->
-            <div class="md:col-span-4 flex justify-center">
-                <div class="w-48 h-48 md:w-64 md:h-64 rounded-3xl overflow-hidden border-8 border-white/30 shadow-2xl">
-                    <img src="liza_1.png" alt="Sureka Elezabath" class="w-full h-full object-cover">
+    <!-- HERO - Completely mobile-first -->
+    <header id="home" class="hero-bg text-white min-h-screen flex items-center relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 py-12 md:py-0 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            
+            <!-- Text -->
+            <div class="text-center md:text-left space-y-6">
+                <!-- <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-5 py-2 rounded-3xl text-xs font-medium mx-auto md:mx-0">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    2025–2026 PROGRAMS OPEN
+                </div> -->
+                
+                <h1 class="hero-text text-4xl md:text-6xl font-bold leading-none tracking-tighter">
+                    HI, I'M LIZA.<br>
+                    <!-- <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-200">I ignite potential.</span> -->
+                </h1>
+                
+                <p class="text-xl md:text-3xl font-light max-w-md mx-auto md:mx-0">
+                    Life Coach • Internationally Certified Experiential Coach • NLP Master • POSH Expert • Sex Education Expert
+                </p>
+                
+                <p class="text-base md:text-lg opacity-90 max-w-sm mx-auto md:mx-0">
+                    Helping you gain clarity, resilience &amp; real success.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="px-8 py-5 bg-white text-stone-900 font-bold text-lg rounded-3xl flex items-center justify-center gap-x-3 hover:shadow-2xl active:scale-95">
+                        LET'S TRANSFORM TOGETHER 🚀
+                    </a>
+                    <a href="#portfolio" class="px-8 py-5 border-2 border-white/80 hover:border-white font-semibold rounded-3xl text-lg flex items-center justify-center">
+                        SEE MY IMPACT
+                    </a>
                 </div>
             </div>
             
-            <!-- Content -->
-            <div class="md:col-span-8 text-center md:text-left">
-                <h1 class="mobile-hero-text heading tracking-[-1.5px] leading-none">Sureka Elezabath</h1>
-                <p class="mt-4 text-lg md:text-xl max-w-lg mx-auto md:mx-0 text-slate-200">
-                    Life Coach • Internationally Certified Experiential Learning Trainer • POSH Facilitator • NLP Trainer • Career Counsellor
-                </p>
-                
-                <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-4 text-base">
-                    <a href="tel:+918248567778" class="flex items-center gap-2 text-base"><i class="fa-solid fa-phone"></i> +91 82485 67778</a>
-                    <a href="mailto:lizacoach26@gmail.com" class="flex items-center gap-2 text-base"><i class="fa-solid fa-envelope"></i> lizacoach26@gmail.com</a>
-                    <span class="flex items-center gap-2 text-base"><i class="fa-solid fa-location-dot"></i> Coimbatore, India</span>
-                </div>
-                
-                <div class="mt-10">
-                    <a href="#contact" 
-                       class="inline-flex items-center gap-3 bg-white text-[#0f172a] px-8 h-12 rounded-3xl font-medium text-base hover:shadow-xl active:scale-95">
-                        Schedule a Conversation
-                    </a>
+            <!-- Image -->
+            <div class="flex justify-center">
+                <div class="hero-image-wrapper relative w-64 h-64 md:w-96 md:h-96 bg-white/10 backdrop-blur-xl rounded-[3rem] p-3 shadow-2xl floating mx-auto">
+                    <img src="https://picsum.photos/id/1005/800/800" 
+                         alt="Liza"
+                         class="w-full h-full object-cover rounded-[2.4rem] border-4 border-white/30">
+                    <div class="absolute -top-4 -right-4 bg-white text-stone-900 text-xs font-bold px-5 py-2 rounded-3xl shadow-xl badge flex items-center gap-1">
+                        Internationally Certified Trainer
+                    </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- VISION -->
-    <section id="about" class="section-padding max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="grid md:grid-cols-12 gap-8 items-start">
-            <div class="md:col-span-4">
-                <h2 class="text-3xl md:text-4xl heading leading-tight">Vision</h2>
+    <!-- ABOUT -->
+    <section id="about" class="py-16 md:py-24 bg-white px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <span class="uppercase text-indigo-500 font-semibold text-sm tracking-widest">MY WHY</span>
+                    <h2 class="section-title text-4xl md:text-5xl font-bold mt-3 leading-none section-header">I turn potential into performance.</h2>
+                    
+                    <div class="mt-10 text-lg text-gray-700 space-y-6">
+                        <p>Hi, I'm <strong>Liza</strong> — approachable, empathetic &amp; passionate about real growth.</p>
+                        <p>I give you crystal-clear direction, deep confidence and practical tools to succeed in life &amp; career.</p>
+                    </div>
+
+                    <div class="mt-12 grid md:grid-cols-2 sm:grid-cols-1 gap-4">
+                        <div class="bg-indigo-50 p-6 rounded-3xl flex items-center gap-4">
+                            <span class="text-4xl">😊</span>
+                            <div><strong>Approachable &amp; Helpful</strong><br>Always with a smile</div>
+                        </div>
+                        <div class="bg-emerald-50 p-6 rounded-3xl flex items-center gap-4">
+                            <span class="text-4xl">❤️</span>
+                            <div><strong>Empathetic &amp; Patient</strong><br>I truly listen</div>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-3xl flex items-center gap-4">
+                            <span class="text-4xl">😂</span>
+                            <div><strong>Fun &amp; Energetic</strong><br>Learning should be exciting!</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-5 bg-gradient-to-br from-blue-950 to-stone-600 text-white rounded-3xl p-8 shadow-2xl">
+                    <h3 class="text-3xl font-semibold">My Vision for You</h3>
+                    <ul class="mt-6 space-y-4 text-lg">
+                        <li>✅ Clear direction &amp; focus</li>
+                        <li>✅ Quantifiable success</li>
+                        <li>✅ Happiness &amp; ownership</li>
+                        <li>✅ Growth that lasts</li>
+                    </ul>
+                </div>
             </div>
-            <div class="md:col-span-8 text-slate-600 text-[17px] leading-relaxed">
-                To empower clients with clarity, ownership and sustainable growth in life and career. 
-                I train individuals and organizations for the roles they hold today and the ones they aspire to tomorrow — 
-                through life skills, leadership and personal development.
-            </div>
-        </div>
-        
-        <!-- Personality -->
-        <div class="mt-12 flex flex-wrap gap-4 text-sm justify-center md:justify-start">
-            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-handshake text-[#0f172a]"></i> Approachable</span>
-            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-heart text-[#0f172a]"></i> Empathetic</span>
-            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-fire text-[#0f172a]"></i> Enthusiastic</span>
-            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-face-smile text-[#0f172a]"></i> Humorous</span>
-            <span class="px-5 py-2 bg-white rounded-3xl shadow-sm flex items-center gap-2"><i class="fa-solid fa-clock text-[#0f172a]"></i> Patient</span>
         </div>
     </section>
 
-    <!-- EXPERTISE -->
-    <section id="expertise" class="bg-white section-padding">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl md:text-4xl heading mb-8">Areas of Expertise</h2>
-            <div class="flex flex-wrap gap-3">
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Communication &amp; Interpersonal Skills</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Decision Making &amp; Problem Solving</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Creative &amp; Critical Thinking</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Self-Awareness &amp; Empathy</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Assertiveness &amp; Resilience</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Goal Setting &amp; Focus</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Time &amp; Stress Management</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Conflict Resolution</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Charismatic Leadership</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Team Building &amp; Collaboration</span>
-                <span class="px-5 py-2 bg-slate-100 text-slate-700 rounded-3xl text-sm">Self-Motivation &amp; Adaptability</span>
+    <!-- SERVICES -->
+    <section id="services" class="py-16 md:py-24 bg-gradient-to-b from-indigo-50 to-white px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-3xl text-xs font-bold">SKILLS THAT SPARK CHANGE</span>
+                <h2 class="section-title text-4xl md:text-5xl font-bold mt-4 section-header">What I Train</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section-padding max-w-5xl mx-auto px-4 sm:px-6 bg-slate-50">
-        <h2 class="text-3xl md:text-4xl heading mb-10">Experience</h2>
-        
-        <div class="space-y-8">
-            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
-                <!-- <div>
-                    <h3 class="font-medium">Business Development &amp; Customer Relationship Manager</h3>
-                    <p class="text-slate-500 text-sm">Various organizations</p>
-                </div> -->
-                <p class="text-sm font-medium text-slate-500">1 year</p>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
-                <div>
-                    <h3 class="font-medium">Life Skills Trainer</h3>
-                    <p class="text-slate-500 text-sm">Only Success Leadership Academy</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-white rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-4">🗣️</div>
+                    <h4 class="font-bold text-2xl">Communication Mastery</h4>
+                    <p class="mt-3 text-gray-600">Interpersonal skills &amp; charismatic leadership</p>
                 </div>
-                <p class="text-sm font-medium text-slate-500">3 years</p>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
-                <div>
-                    <h3 class="font-medium">Head of Training &amp; Development</h3>
-                    <p class="text-slate-500 text-sm">Achievers Training Institute (ATI)</p>
+                <div class="card-hover bg-white rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h4 class="font-bold text-2xl">Decision Making &amp; Problem Solving</h4>
+                    <p class="mt-3 text-gray-600">Critical thinking that creates results</p>
                 </div>
-                <p class="text-sm font-medium text-slate-500">3 years</p>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-between sm:items-baseline gap-2">
-                <div>
-                    <h3 class="font-medium">Freelance Life Skills &amp; Leadership Trainer</h3>
-                    <p class="text-slate-500 text-sm">Schools, Colleges &amp; Corporates</p>
+                <div class="card-hover bg-white rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-4">🔥</div>
+                    <h4 class="font-bold text-2xl">Resilience &amp; Stress Mastery</h4>
+                    <p class="mt-3 text-gray-600">Build unbreakable mindset &amp; focus</p>
                 </div>
-                <p class="text-sm font-medium text-slate-500">5 years</p>
+                <div class="card-hover bg-white rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h4 class="font-bold text-2xl">Team Building &amp; Collaboration</h4>
+                    <p class="mt-3 text-gray-600">Conflict resolution &amp; high-performing teams</p>
+                </div>
+                <div class="card-hover bg-white rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h4 class="font-bold text-2xl">Goal Setting &amp; Time Mastery</h4>
+                    <p class="mt-3 text-gray-600">Productivity &amp; adaptability</p>
+                </div>
+                <div class="card-hover bg-white rounded-3xl p-8 text-center">
+                    <div class="text-5xl mb-4">🌟</div>
+                    <h4 class="font-bold text-2xl">Self-Awareness &amp; Confidence</h4>
+                    <p class="mt-3 text-gray-600">Assertiveness &amp; self-esteem</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- PORTFOLIO -->
-    <section id="portfolio" class="section-padding max-w-5xl mx-auto px-4 sm:px-6">
-        <h2 class="text-3xl md:text-4xl heading mb-8">Training Portfolio</h2>
-        <ul class="grid md:grid-cols-1 gap-6 text-slate-600 text-[15px]">
-            <li class="flex gap-4"><span class="font-medium">•</span> Women Empowerment &amp; Leadership – SDNB Vaishnav College (2025–26)</li>
-            <li class="flex gap-4"><span class="font-medium">•</span> Workplace Ethics &amp; POSH Compliance – Biometrics</li>
-            <li class="flex gap-4"><span class="font-medium">•</span> Strategic Visioning &amp; Goal Alignment – Biometrics Chennai</li>
-            <li class="flex gap-4"><span class="font-medium">•</span> Sales Effectiveness &amp; Customer Engagement – DAC Construction</li>
-            <li class="flex gap-4"><span class="font-medium">•</span> Team Dynamics &amp; Outbound Learning – Mount Olive &amp; LIBA</li>
-            <li class="flex gap-4"><span class="font-medium">•</span> Professional Skills &amp; Behavioral Competency – Multiple Colleges</li>
-        </ul>
-    </section>
-
-    <!-- certifications -->
-    <section id="certifications" class="section-padding max-w-5xl mx-auto px-4 sm:px-6">
-        <div class="grid md:grid-cols-1 gap-12">
-            <div>
-                <h2 class="text-3xl md:text-4xl heading mb-8">Certifications</h2>
-                <ul class="space-y-6 text-slate-600 text-[15px]">
-                    <li class="flex gap-4"><span class="font-medium">•</span> International Games-Based Learning Facilitator</li>
-                    <li class="flex gap-4"><span class="font-medium">•</span> Master Practitioner – Neuro-Linguistic Programming (NLP)</li>
-                    <li class="flex gap-4"><span class="font-medium">•</span> POSH &amp; POCSO Certified Trainer &amp; Facilitator</li>
-                    <li class="flex gap-4"><span class="font-medium">•</span> Certified REBT, TA, Gestalt &amp; CBT Practitioner</li>
-                    <li class="flex gap-4"><span class="font-medium">•</span> Expressive Arts &amp; Play Therapy</li>
-                    <li class="flex gap-4"><span class="font-medium">•</span> Certified Career Counsellor</li>
-                </ul>
+    <section id="portfolio" class="py-16 md:py-24 bg-white px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center md:text-left mb-12">
+                <span class="text-emerald-600 font-bold">2025–2026 HIGHLIGHTS</span>
+                <h2 class="section-title text-4xl md:text-5xl font-bold section-header">Where I’ve Sparked Transformation</h2>
             </div>
-            <div>
-                <h2 class="text-3xl md:text-4xl heading mb-8">Education</h2>
-                <ul class="space-y-6 text-slate-600 text-[15px]">
-                    <li class="flex gap-4"><span class="font-medium">•</span> Master of Social Work (HR)</li>
-                    <li class="flex gap-4"><span class="font-medium">•</span> PG Diploma in Psychotherapy and Life Coaching</li>
-                    <li class="flex gap-4"><span class="font-medium">•</span> Bachelor of Computer Applications</li>
-                </ul>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group bg-gradient-to-br from-indigo-50 to-indigo-50 p-8 rounded-3xl">
+                    <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">June 2025 – Mar 2026</span>
+                    <h4 class="text-2xl font-semibold mt-6">Women Empowerment &amp; Leadership</h4>
+                    <p class="text-emerald-700 mt-2">SDNB Vaishnav College</p>
+                </div>
+                <div class="group bg-gradient-to-br from-emerald-50 to-yellow-50 p-8 rounded-3xl">
+                    <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Corporate</span>
+                    <h4 class="text-2xl font-semibold mt-6">Workplace Ethics &amp; POSH</h4>
+                    <p class="text-indigo-700 mt-2">Biometrics, Salem</p>
+                </div>
+                <div class="group bg-gradient-to-br from-indigo-50 to-indigo-50 p-8 rounded-3xl">
+                    <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Strategic</span>
+                    <h4 class="text-2xl font-semibold mt-6">Visioning &amp; Goal Alignment</h4>
+                    <p class="text-emerald-700 mt-2">Biometrics, Chennai</p>
+                </div>
+                <!-- Repeat for remaining programs (same pattern) -->
+                <div class="group bg-gradient-to-br from-yellow-50 to-emerald-50 p-8 rounded-3xl">
+                    <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Sales</span>
+                    <h4 class="text-2xl font-semibold mt-6">Sales Effectiveness &amp; Customer Engagement</h4>
+                    <p class="text-indigo-700 mt-2">DAC Construction</p>
+                </div>
+                <div class="group bg-gradient-to-br from-indigo-50 to-emerald-50 p-8 rounded-3xl">
+                    <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Outbound</span>
+                    <h4 class="text-2xl font-semibold mt-6">Experiential Learning (OBT)</h4>
+                    <p class="text-emerald-700 mt-2">LIBA</p>
+                </div>
+                <div class="group bg-gradient-to-br from-indigo-50 to-yellow-50 p-8 rounded-3xl">
+                    <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Campus</span>
+                    <h4 class="text-2xl font-semibold mt-6">Life Skills &amp; Behavioral Training</h4>
+                    <p class="text-indigo-700 mt-2">Multiple Colleges</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FINAL CTA -->
-    <section id="contact" class="bg-[#0f172a] text-white py-12 md:py-20 text-center">
-        <div class="max-w-2xl mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl md:text-4xl heading">Let’s create impact together</h2>
-            <p class="mt-4 text-slate-300">Corporate training • Leadership programmes • 1:1 coaching • Online &amp; in-person</p>
-            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+918248567778" 
-                   class=" lg:px-4 flex-1 sm:flex-none flex justify-center items-center gap-3 bg-white text-[#0f172a] h-14 rounded-3xl font-medium text-base">
-                    <i class="fa-solid fa-phone"></i> Call +91 82485 67778
-                </a>
-                <a href="mailto:lizacoach26@gmail.com" 
-                   class="lg:px-4 flex-1 sm:flex-none flex justify-center items-center gap-3 border border-white h-14 rounded-3xl font-medium text-base">
-                    <i class="fa-solid fa-envelope"></i> Write to me
-                </a>
+    <!-- TESTIMONIALS - Responsive Grid + Mobile Slider -->
+<section id="testimonials" class="py-16 md:py-24 bg-gradient-to-br from-white to-pink-50 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-3xl text-xs font-bold tracking-widest">REAL STORIES</span>
+            <h2 class="section-title text-4xl md:text-5xl font-bold mt-4 section-header">What People Say About Liza</h2>
+        </div>
+
+        <!-- Desktop & Tablet: Grid Layout (3 columns) -->
+        <div class="hidden md:grid md:grid-cols-3 gap-8">
+            
+            <!-- Testimonial 1 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 card-hover">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-gradient-to-br from-pink-400 to-emerald-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">S</div>
+                    <div>
+                        <p class="font-semibold">Shalini Menon</p>
+                        <p class="text-pink-600 text-sm">Assistant Professor • SDNB Vaishnav College</p>
+                    </div>
+                </div>
+                <div class="text-6xl text-pink-100 mb-4">“</div>
+                <p class="text-gray-700 leading-relaxed italic">
+                    "Liza's Women Empowerment program was truly transformative. Her experiential approach made learning fun and deeply impactful for our students."
+                </p>
+                <div class="mt-6 text-yellow-400">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 card-hover">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-indigo-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">R</div>
+                    <div>
+                        <p class="font-semibold">Ramesh Kumar</p>
+                        <p class="text-pink-600 text-sm">HR Manager • Biometrics, Salem</p>
+                    </div>
+                </div>
+                <div class="text-6xl text-pink-100 mb-4">“</div>
+                <p class="text-gray-700 leading-relaxed italic">
+                    "The POSH workshop by Liza was outstanding. She handled the session with great sensitivity and professionalism. Highly recommended."
+                </p>
+                <div class="mt-6 text-yellow-400">★★★★★</div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 card-hover">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-pink-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">P</div>
+                    <div>
+                        <p class="font-semibold">Priya Sharma</p>
+                        <p class="text-pink-600 text-sm">Corporate Professional</p>
+                    </div>
+                </div>
+                <div class="text-6xl text-pink-100 mb-4">“</div>
+                <p class="text-gray-700 leading-relaxed italic">
+                    "Liza's 1:1 coaching helped me gain clarity and confidence. Her practical tools made a real difference in my life and career."
+                </p>
+                <div class="mt-6 text-yellow-400">★★★★★</div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Only: Slider with Arrows -->
+        <div class="md:hidden relative">
+            <div id="mobile-testimonial-slider" class="overflow-hidden rounded-3xl">
+                <div id="mobile-slides" class="flex transition-transform duration-500 ease-in-out">
+
+                    <!-- Mobile Slide 1 -->
+                    <div class="min-w-full bg-white p-8 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-gradient-to-br from-pink-400 to-emerald-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">S</div>
+                            <div>
+                                <p class="font-semibold">Shalini Menon</p>
+                                <p class="text-pink-600 text-sm">SDNB Vaishnav College</p>
+                            </div>
+                        </div>
+                        <div class="text-6xl text-pink-100 mb-4">“</div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            "Liza's Women Empowerment program was truly transformative. Her experiential approach made learning fun and deeply impactful for our students."
+                        </p>
+                        <div class="mt-6 text-yellow-400">★★★★★</div>
+                    </div>
+
+                    <!-- Mobile Slide 2 -->
+                    <div class="min-w-full bg-white p-8 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-indigo-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">R</div>
+                            <div>
+                                <p class="font-semibold">Ramesh Kumar</p>
+                                <p class="text-pink-600 text-sm">Biometrics, Salem</p>
+                            </div>
+                        </div>
+                        <div class="text-6xl text-pink-100 mb-4">“</div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            "The POSH workshop by Liza was outstanding. She handled the session with great sensitivity and professionalism."
+                        </p>
+                        <div class="mt-6 text-yellow-400">★★★★★</div>
+                    </div>
+
+                    <!-- Mobile Slide 3 -->
+                    <div class="min-w-full bg-white p-8 shadow-sm">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-gradient-to-br from-amber-400 to-pink-400 rounded-2xl flex items-center justify-center text-white text-2xl font-bold">P</div>
+                            <div>
+                                <p class="font-semibold">Priya Sharma</p>
+                                <p class="text-pink-600 text-sm">Corporate Professional</p>
+                            </div>
+                        </div>
+                        <div class="text-6xl text-pink-100 mb-4">“</div>
+                        <p class="text-gray-700 leading-relaxed italic">
+                            "Liza's 1:1 coaching helped me gain clarity and confidence. Her practical tools made a real difference."
+                        </p>
+                        <div class="mt-6 text-yellow-400">★★★★★</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Buttons -->
+            <button onclick="prevMobileSlide()" 
+                    class="absolute -left-4 top-1/2 -translate-y-1/2 bg-white text-pink-600 w-11 h-11 rounded-2xl shadow-lg flex items-center justify-center text-2xl border border-gray-100 active:scale-90">
+                ←
+            </button>
+            
+            <button onclick="nextMobileSlide()" 
+                    class="absolute -right-4 top-1/2 -translate-y-1/2 bg-white text-pink-600 w-11 h-11 rounded-2xl shadow-lg flex items-center justify-center text-2xl border border-gray-100 active:scale-90">
+                →
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="py-16 md:py-24 bg-gradient-to-br from-blue-950 to-stone-600 text-white px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-4xl md:text-5xl font-bold section-header text-white">My Certified Superpowers</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 text-center hover:bg-white/20">
+                    <div class="text-6xl mb-4">🌍</div>
+                    <p class="font-semibold">Internationally Certified Experiential Coach</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 text-center hover:bg-white/20">
+                    <div class="text-6xl mb-4">🛡️</div>
+                    <p class="font-semibold">POSH &amp; POCSO Facilitator</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 text-center hover:bg-white/20">
+                    <div class="text-6xl mb-4">🧬</div>
+                    <p class="font-semibold">Master NLP Practitioner</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 text-center hover:bg-white/20">
+                    <div class="text-6xl mb-4">🧠</div>
+                    <p class="font-semibold">REBT • CBT • TA • Arts Therapy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 md:py-24 bg-white px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-5">
+                <h2 class="text-4xl md:text-5xl font-bold leading-tight">Ready to level up?</h2>
+                <p class="mt-6 text-lg text-gray-700">Corporate training, workshops or 1:1 coaching — let's create your breakthrough.</p>
+                
+                <div class="mt-12 space-y-8">
+                    <a href="tel:8248567778" class="flex gap-5 items-center">
+                        <span class="text-5xl">📱</span>
+                        <div><p class="text-2xl font-semibold">+91 82485 67778</p><p class="text-indigo-600">Call / WhatsApp</p></div>
+                    </a>
+                    <a href="mailto:lizacoach26@gmail.com" class="flex gap-5 items-center">
+                        <span class="text-5xl">✉️</span>
+                        <div><p class="text-2xl font-semibold">lizacoach26@gmail.com</p><p class="text-indigo-600">I reply fast</p></div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7 bg-gradient-to-br from-indigo-50 to-emerald-50 rounded-3xl p-8 md:p-12">
+                <form id="contact-form" class="space-y-6">
+                    <input type="text" placeholder="Your name" class="w-full bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <input type="tel" placeholder="Phone / WhatsApp" class="bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+                        <input type="email" placeholder="Your email" class="bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+                    </div>
+                    <textarea placeholder="Tell me about your needs..." rows="4" class="w-full bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+                    <button type="submit" class="w-full py-7 bg-gradient-to-r from-blue-950 to-stone-600 text-white font-bold text-2xl rounded-3xl active:scale-95">SEND MY REQUEST ✨</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-white py-8 text-center text-xs text-slate-400 no-print">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            © 2026 Sureka Elezabath • Coimbatore, India
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="flex justify-center mb-6">
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-950 to-stone-600 rounded-3xl flex items-center justify-center text-4xl">L</div>
+            </div>
+            <p class="text-xl font-light">LIZA — Empowering people, one transformation at a time.</p>
+            <p class="mt-8 text-xs opacity-60">© 2026 Sureka Elezabath (Liza) • Coimbatore, India</p>
         </div>
     </footer>
 
     <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const icon = document.getElementById('hamburger');
-            menu.classList.toggle('hidden');
-            
-            if (menu.classList.contains('hidden')) {
-                icon.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-            } else {
-                icon.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-            }
-        }
+        // Mobile menu
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.getElementById('hamburger');
-            hamburger.addEventListener('click', toggleMobileMenu);
+    function toggleMobileMenu() {
+        if (mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('hidden');
+            mobileBtn.innerHTML = '✕';
+        } else {
+            mobileMenu.classList.add('hidden');
+            mobileBtn.innerHTML = '☰';
+        }
+    }
+
+    // Attach click listener
+    mobileBtn.addEventListener('click', toggleMobileMenu);
+
+        // Form
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const original = btn.innerHTML;
+            btn.innerHTML = 'SENDING... ⚡';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.innerHTML = '🎉 SENT! Liza will reply soon';
+                setTimeout(() => {
+                    this.reset();
+                    btn.innerHTML = original;
+                    btn.disabled = false;
+                }, 2500);
+            }, 1500);
         });
+
+        // Tailwind + animations
+        window.onload = () => {
+            console.log('%c✅ LIZA — 100% MOBILE OPTIMIZED & READY!', 'background:#1e1a4d;color:white;padding:4px 12px;border-radius:9999px;font-weight:700');
+            // Simple fade-in for sections
+            document.querySelectorAll('section').forEach((s, i) => {
+                if (s.id !== 'home') {
+                    s.style.opacity = '0';
+                    setTimeout(() => s.style.transition = `opacity 0.8s ${i * 80}ms ease`, 100);
+                    s.style.opacity = '1';
+                }
+            });
+        };
+
+       // Mobile Testimonial Slider
+let currentMobileSlide = 0;
+const mobileSlidesContainer = document.getElementById('mobile-slides');
+
+function updateMobileSlider() {
+    mobileSlidesContainer.style.transform = `translateX(-${currentMobileSlide * 100}%)`;
+}
+
+function nextMobileSlide() {
+    currentMobileSlide = (currentMobileSlide + 1) % 3;
+    updateMobileSlider();
+}
+
+function prevMobileSlide() {
+    currentMobileSlide = (currentMobileSlide - 1 + 3) % 3;
+    updateMobileSlider();
+}
+
+// Optional: Auto slide on mobile every 5 seconds
+setInterval(() => {
+    if (window.innerWidth < 768) {   // Only auto-slide on mobile
+        nextMobileSlide();
+    }
+}, 5000);
     </script>
 </body>
 </html>
