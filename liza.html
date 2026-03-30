@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap');
         
         :root {
-            --tw-color-primary: #2f0766;
+            --tw-color-primary: #1e1a4d;
         }
         
         * {
@@ -29,14 +29,14 @@
         }
         
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 15px -5px  #2f0766; }
-            50% { box-shadow: 0 0 30px 10px  #2f0766; }
+            0%, 100% { box-shadow: 0 0 15px -5px  #1e1a4d; }
+            50% { box-shadow: 0 0 30px 10px  #1e1a4d; }
         }
         
         .tail-container * { font-family: 'Poppins', system_ui, sans-serif; }
         
         .hero-bg {
-            background: linear-gradient(135deg, #4f46e5 0%, #2f0766 50%, #10b981 100%);
+            background: linear-gradient(135deg,  #1e1a4d 30%, #292524 100%);
             animation: gradientShift 15s ease infinite;
         }
         
@@ -57,7 +57,7 @@
             height: 3px;
             bottom: -2px;
             left: 0;
-            background-color: #2f0766;
+            background-color: #1e1a4d;
         }
         
         .nav-link:hover:after { width: 100%; }
@@ -67,7 +67,7 @@
             position: absolute;
             width: 50px;
             height: 4px;
-            background: linear-gradient(to right, #2f0766, #10b981);
+            background: linear-gradient(to right, #1e1a4d, #292524);
             bottom: -8px;
             left: 50%;
             transform: translateX(-50%);
@@ -80,7 +80,7 @@
         
         .card-hover:hover {
             transform: scale(1.04);
-            box-shadow: 12px 12px 0 -6px  #2f0766;
+            box-shadow: 12px 12px 0 -6px  #1e1a4d;
         }
         
         .badge {
@@ -122,31 +122,31 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
             <!-- Logo -->
             <div class="flex items-center gap-x-2">
-                <div class="w-9 h-9 bg-gradient-to-br from-pink-500 to-emerald-500 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-inner">L</div>
+                <div class="w-9 h-9 bg-gradient-to-br from-blue-950 to-stone-600 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-inner">L</div>
                 <div class="nav-logo-text">
                     <h1 class="text-xl font-bold tracking-tighter text-gray-900">LIZA</h1>
-                    <p class="text-[10px] font-medium text-pink-600 -mt-0.5 tracking-[1.5px]">TRAIN • COACH • TRANSFORM</p>
+                    <p class="text-[10px] font-medium text-blue-950 -mt-0.5 tracking-[1.5px]">TRAIN • COACH • TRANSFORM</p>
                 </div>
             </div>
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                <a href="#about" class="nav-link text-gray-700 hover:text-pink-600">About</a>
-                <a href="#services" class="nav-link text-gray-700 hover:text-pink-600">What I Train</a>
-                <a href="#portfolio" class="nav-link text-gray-700 hover:text-pink-600">Portfolio</a>
-                <a href="#certifications" class="nav-link text-gray-700 hover:text-pink-600">Credentials</a>
-                <a href="#contact" class="nav-link text-gray-700 hover:text-pink-600">Connect</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-indigo-600">What I Train</a>
+                <a href="#portfolio" class="nav-link text-gray-700 hover:text-indigo-600">Portfolio</a>
+                <a href="#certifications" class="nav-link text-gray-700 hover:text-indigo-600">Credentials</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Connect</a>
             </div>
 
             <div class="flex items-center gap-x-3">
-                <a href="#contact" class="hidden sm:flex px-6 py-3 bg-gradient-to-r from-pink-500 to-emerald-500 text-white font-semibold rounded-3xl text-sm items-center gap-x-2 hover:scale-110 active:scale-95 shadow-lg">
+                <a href="#contact" class="hidden sm:flex px-6 py-3 bg-gradient-to-r from-blue-950 to-stone-600 text-white font-semibold rounded-3xl text-sm items-center gap-x-2 hover:scale-110 active:scale-95 shadow-lg">
                     BOOK SESSION →
                 </a>
                 
                 <!-- Mobile Hamburger -->
                 <!-- Replace the existing mobile button with this -->
                 <button id="mobile-menu-btn" 
-                    class="md:hidden w-11 h-11 flex items-center justify-center text-4xl text-pink-600 active:scale-90">
+                    class="md:hidden w-11 h-11 flex items-center justify-center text-4xl text-indigo-600 active:scale-90">
                      ☰
                 </button>
             </div>
@@ -155,12 +155,12 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-4 py-6 mobile-menu">
             <div class="flex flex-col gap-y-4 text-center text-lg font-medium">
-                <a href="#about" onclick="toggleMobileMenu()" class="py-3 hover:text-pink-600">About Me</a>
-                <a href="#services" onclick="toggleMobileMenu()" class="py-3 hover:text-pink-600">What I Train</a>
-                <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3 hover:text-pink-600">Recent Programs</a>
-                <a href="#certifications" onclick="toggleMobileMenu()" class="py-3 hover:text-pink-600">My Credentials</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="py-3 hover:text-pink-600">Get in Touch</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="mt-6 py-5 bg-gradient-to-r from-pink-500 to-emerald-500 text-white rounded-3xl font-semibold text-xl shadow-xl active:scale-95">BOOK YOUR TRANSFORMATION</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">About Me</a>
+                <a href="#services" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">What I Train</a>
+                <a href="#portfolio" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">Recent Programs</a>
+                <a href="#certifications" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">My Credentials</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="py-3 hover:text-indigo-600">Get in Touch</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="mt-6 py-5 bg-gradient-to-r from-blue-950 to-stone-600 text-white rounded-3xl font-semibold text-xl shadow-xl active:scale-95">BOOK YOUR TRANSFORMATION</a>
             </div>
         </div>
     </nav>
@@ -185,7 +185,7 @@
                 </h1>
                 
                 <p class="text-xl md:text-3xl font-light max-w-md mx-auto md:mx-0">
-                    Life Coach • Internationally Certified Experiential Coach • NLP Master • POSH Expert
+                    Life Coach • Internationally Certified Experiential Coach • NLP Master • POSH Expert • Sex Education Expert
                 </p>
                 
                 <p class="text-base md:text-lg opacity-90 max-w-sm mx-auto md:mx-0">
@@ -193,7 +193,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#contact" class="px-8 py-5 bg-white text-pink-600 font-bold text-lg rounded-3xl flex items-center justify-center gap-x-3 hover:shadow-2xl active:scale-95">
+                    <a href="#contact" class="px-8 py-5 bg-white text-indigo-600 font-bold text-lg rounded-3xl flex items-center justify-center gap-x-3 hover:shadow-2xl active:scale-95">
                         LET'S TRANSFORM TOGETHER 🚀
                     </a>
                     <a href="#portfolio" class="px-8 py-5 border-2 border-white/80 hover:border-white font-semibold rounded-3xl text-lg flex items-center justify-center">
@@ -208,7 +208,7 @@
                     <img src="https://picsum.photos/id/1005/800/800" 
                          alt="Liza"
                          class="w-full h-full object-cover rounded-[2.4rem] border-4 border-white/30">
-                    <div class="absolute -top-4 -right-4 bg-white text-pink-600 text-xs font-bold px-5 py-2 rounded-3xl shadow-xl badge flex items-center gap-1">
+                    <div class="absolute -top-4 -right-4 bg-white text-indigo-600 text-xs font-bold px-5 py-2 rounded-3xl shadow-xl badge flex items-center gap-1">
                         Internationally Certified Trainer
                     </div>
                 </div>
@@ -221,7 +221,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
                 <div class="md:col-span-7">
-                    <span class="uppercase text-pink-500 font-semibold text-sm tracking-widest">MY WHY</span>
+                    <span class="uppercase text-indigo-500 font-semibold text-sm tracking-widest">MY WHY</span>
                     <h2 class="section-title text-4xl md:text-5xl font-bold mt-3 leading-none section-header">I turn potential into performance.</h2>
                     
                     <div class="mt-10 text-lg text-gray-700 space-y-6">
@@ -230,7 +230,7 @@
                     </div>
 
                     <div class="mt-12 grid md:grid-cols-2 sm:grid-cols-1 gap-4">
-                        <div class="bg-pink-50 p-6 rounded-3xl flex items-center gap-4">
+                        <div class="bg-indigo-50 p-6 rounded-3xl flex items-center gap-4">
                             <span class="text-4xl">😊</span>
                             <div><strong>Approachable &amp; Helpful</strong><br>Always with a smile</div>
                         </div>
@@ -245,7 +245,7 @@
                     </div>
                 </div>
                 
-                <div class="md:col-span-5 bg-gradient-to-br from-indigo-600 to-pink-600 text-white rounded-3xl p-8 shadow-2xl">
+                <div class="md:col-span-5 bg-gradient-to-br from-blue-950 to-stone-600 text-white rounded-3xl p-8 shadow-2xl">
                     <h3 class="text-3xl font-semibold">My Vision for You</h3>
                     <ul class="mt-6 space-y-4 text-lg">
                         <li>✅ Clear direction &amp; focus</li>
@@ -259,10 +259,10 @@
     </section>
 
     <!-- SERVICES -->
-    <section id="services" class="py-16 md:py-24 bg-gradient-to-b from-pink-50 to-white px-4">
+    <section id="services" class="py-16 md:py-24 bg-gradient-to-b from-indigo-50 to-white px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-3xl text-xs font-bold">SKILLS THAT SPARK CHANGE</span>
+                <span class="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-3xl text-xs font-bold">SKILLS THAT SPARK CHANGE</span>
                 <h2 class="section-title text-4xl md:text-5xl font-bold mt-4 section-header">What I Train</h2>
             </div>
             
@@ -310,7 +310,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group bg-gradient-to-br from-indigo-50 to-pink-50 p-8 rounded-3xl">
+                <div class="group bg-gradient-to-br from-indigo-50 to-indigo-50 p-8 rounded-3xl">
                     <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">June 2025 – Mar 2026</span>
                     <h4 class="text-2xl font-semibold mt-6">Women Empowerment &amp; Leadership</h4>
                     <p class="text-emerald-700 mt-2">SDNB Vaishnav College</p>
@@ -318,9 +318,9 @@
                 <div class="group bg-gradient-to-br from-emerald-50 to-yellow-50 p-8 rounded-3xl">
                     <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Corporate</span>
                     <h4 class="text-2xl font-semibold mt-6">Workplace Ethics &amp; POSH</h4>
-                    <p class="text-pink-700 mt-2">Biometrics, Salem</p>
+                    <p class="text-indigo-700 mt-2">Biometrics, Salem</p>
                 </div>
-                <div class="group bg-gradient-to-br from-pink-50 to-indigo-50 p-8 rounded-3xl">
+                <div class="group bg-gradient-to-br from-indigo-50 to-indigo-50 p-8 rounded-3xl">
                     <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Strategic</span>
                     <h4 class="text-2xl font-semibold mt-6">Visioning &amp; Goal Alignment</h4>
                     <p class="text-emerald-700 mt-2">Biometrics, Chennai</p>
@@ -329,14 +329,14 @@
                 <div class="group bg-gradient-to-br from-yellow-50 to-emerald-50 p-8 rounded-3xl">
                     <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Sales</span>
                     <h4 class="text-2xl font-semibold mt-6">Sales Effectiveness &amp; Customer Engagement</h4>
-                    <p class="text-pink-700 mt-2">DAC Construction</p>
+                    <p class="text-indigo-700 mt-2">DAC Construction</p>
                 </div>
                 <div class="group bg-gradient-to-br from-indigo-50 to-emerald-50 p-8 rounded-3xl">
                     <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Outbound</span>
                     <h4 class="text-2xl font-semibold mt-6">Experiential Learning (OBT)</h4>
                     <p class="text-emerald-700 mt-2">LIBA</p>
                 </div>
-                <div class="group bg-gradient-to-br from-pink-50 to-yellow-50 p-8 rounded-3xl">
+                <div class="group bg-gradient-to-br from-indigo-50 to-yellow-50 p-8 rounded-3xl">
                     <span class="text-xs font-bold bg-white px-4 py-1 rounded-2xl">Campus</span>
                     <h4 class="text-2xl font-semibold mt-6">Life Skills &amp; Behavioral Training</h4>
                     <p class="text-indigo-700 mt-2">Multiple Colleges</p>
@@ -346,7 +346,7 @@
     </section>
 
     <!-- TESTIMONIALS WITH SLIDER -->
-<section id="testimonials" class="py-16 md:py-24 bg-gradient-to-br from-white to-pink-50 px-4">
+<section id="testimonials" class="py-16 md:py-24 bg-gradient-to-br from-white to-indigo-50 px-4">
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12">
             <span class="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-3xl text-xs font-bold tracking-widest">REAL TRANSFORMATIONS</span>
@@ -363,13 +363,13 @@
                     <!-- Slide 1 -->
                     <div class="min-w-full bg-white p-10 md:p-12 shadow-xl">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-emerald-400 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">S</div>
+                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-emerald-400 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">S</div>
                             <div>
                                 <p class="font-semibold text-xl">Shalini Menon</p>
-                                <p class="text-pink-600">Assistant Professor, SDNB Vaishnav College</p>
+                                <p class="text-indigo-600">Assistant Professor, SDNB Vaishnav College</p>
                             </div>
                         </div>
-                        <div class="text-7xl text-pink-100 mb-6">“</div>
+                        <div class="text-7xl text-indigo-100 mb-6">“</div>
                         <p class="text-gray-700 text-lg leading-relaxed italic">
                             "Liza's Women Empowerment & Leadership program was a game-changer for our students. 
                             Her experiential approach made the sessions engaging and deeply impactful. 
@@ -384,10 +384,10 @@
                             <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-indigo-400 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">R</div>
                             <div>
                                 <p class="font-semibold text-xl">Ramesh Kumar</p>
-                                <p class="text-pink-600">HR Manager, Biometrics, Salem</p>
+                                <p class="text-indigo-600">HR Manager, Biometrics, Salem</p>
                             </div>
                         </div>
-                        <div class="text-7xl text-pink-100 mb-6">“</div>
+                        <div class="text-7xl text-indigo-100 mb-6">“</div>
                         <p class="text-gray-700 text-lg leading-relaxed italic">
                             "The POSH workshop conducted by Liza was exceptional. She handled sensitive topics 
                             with great empathy and professionalism. Our employees found her sessions highly practical and engaging."
@@ -398,13 +398,13 @@
                     <!-- Slide 3 -->
                     <div class="min-w-full bg-white p-10 md:p-12 shadow-xl">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-pink-400 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">P</div>
+                            <div class="w-16 h-16 bg-gradient-to-br from-amber-400 to-indigo-400 rounded-2xl flex items-center justify-center text-white text-3xl font-bold">P</div>
                             <div>
                                 <p class="font-semibold text-xl">Priya Sharma</p>
-                                <p class="text-pink-600">Corporate Professional & Coachee</p>
+                                <p class="text-indigo-600">Corporate Professional & Coachee</p>
                             </div>
                         </div>
-                        <div class="text-7xl text-pink-100 mb-6">“</div>
+                        <div class="text-7xl text-indigo-100 mb-6">“</div>
                         <p class="text-gray-700 text-lg leading-relaxed italic">
                             "Liza's 1:1 coaching helped me gain crystal-clear clarity and rebuild my confidence. 
                             Her practical tools and supportive approach made a real difference in both my personal and professional life."
@@ -417,19 +417,19 @@
 
             <!-- Navigation Buttons -->
             <button onclick="prevSlide()" 
-                    class="absolute -left-5 top-1/2 -translate-y-1/2 bg-white hover:bg-pink-50 text-pink-600 w-12 h-12 rounded-2xl shadow-lg flex items-center justify-center text-3xl active:scale-90 transition-all border border-gray-100">
+                    class="absolute -left-5 top-1/2 -translate-y-1/2 bg-white hover:bg-indigo-50 text-indigo-600 w-12 h-12 rounded-2xl shadow-lg flex items-center justify-center text-3xl active:scale-90 transition-all border border-gray-100">
                 ←
             </button>
             
             <button onclick="nextSlide()" 
-                    class="absolute -right-5 top-1/2 -translate-y-1/2 bg-white hover:bg-pink-50 text-pink-600 w-12 h-12 rounded-2xl shadow-lg flex items-center justify-center text-3xl active:scale-90 transition-all border border-gray-100">
+                    class="absolute -right-5 top-1/2 -translate-y-1/2 bg-white hover:bg-indigo-50 text-indigo-600 w-12 h-12 rounded-2xl shadow-lg flex items-center justify-center text-3xl active:scale-90 transition-all border border-gray-100">
                 →
             </button>
 
             <!-- Dots Indicator -->
             <div class="flex justify-center gap-3 mt-10">
                 <button onclick="goToSlide(0)" id="dot-0" 
-                        class="w-3 h-3 rounded-full bg-pink-600 transition-all"></button>
+                        class="w-3 h-3 rounded-full bg-indigo-600 transition-all"></button>
                 <button onclick="goToSlide(1)" id="dot-1" 
                         class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all"></button>
                 <button onclick="goToSlide(2)" id="dot-2" 
@@ -440,14 +440,14 @@
 </section>
 
     <!-- CERTIFICATIONS -->
-    <section id="certifications" class="py-16 md:py-24 bg-gradient-to-br from-pink-600 to-indigo-700 text-white px-4">
+    <section id="certifications" class="py-16 md:py-24 bg-gradient-to-br from-blue-950 to-stone-600 text-white px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="section-title text-4xl md:text-5xl font-bold section-header text-white">My Certified Superpowers</h2>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 text-center hover:bg-white/20">
-                    <div class="text-6xl mb-4">🎮</div>
+                    <div class="text-6xl mb-4">🌍</div>
                     <p class="font-semibold">Internationally Certified Experiential Coach</p>
                 </div>
                 <div class="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 text-center hover:bg-white/20">
@@ -476,24 +476,24 @@
                 <div class="mt-12 space-y-8">
                     <a href="tel:8248567778" class="flex gap-5 items-center">
                         <span class="text-5xl">📱</span>
-                        <div><p class="text-2xl font-semibold">+91 82485 67778</p><p class="text-pink-600">Call / WhatsApp</p></div>
+                        <div><p class="text-2xl font-semibold">+91 82485 67778</p><p class="text-indigo-600">Call / WhatsApp</p></div>
                     </a>
                     <a href="mailto:lizacoach26@gmail.com" class="flex gap-5 items-center">
                         <span class="text-5xl">✉️</span>
-                        <div><p class="text-2xl font-semibold">lizacoach26@gmail.com</p><p class="text-pink-600">I reply fast</p></div>
+                        <div><p class="text-2xl font-semibold">lizacoach26@gmail.com</p><p class="text-indigo-600">I reply fast</p></div>
                     </a>
                 </div>
             </div>
             
-            <div class="md:col-span-7 bg-gradient-to-br from-pink-50 to-emerald-50 rounded-3xl p-8 md:p-12">
+            <div class="md:col-span-7 bg-gradient-to-br from-indigo-50 to-emerald-50 rounded-3xl p-8 md:p-12">
                 <form id="contact-form" class="space-y-6">
-                    <input type="text" placeholder="Your name" class="w-full bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-pink-400" required>
+                    <input type="text" placeholder="Your name" class="w-full bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <input type="tel" placeholder="Phone / WhatsApp" class="bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-pink-400" required>
-                        <input type="email" placeholder="Your email" class="bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-pink-400" required>
+                        <input type="tel" placeholder="Phone / WhatsApp" class="bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
+                        <input type="email" placeholder="Your email" class="bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400" required>
                     </div>
-                    <textarea placeholder="Tell me about your needs..." rows="4" class="w-full bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
-                    <button type="submit" class="w-full py-7 bg-gradient-to-r from-pink-500 to-emerald-500 text-white font-bold text-2xl rounded-3xl active:scale-95">SEND MY REQUEST ✨</button>
+                    <textarea placeholder="Tell me about your needs..." rows="4" class="w-full bg-white rounded-3xl px-6 py-5 text-base focus:outline-none focus:ring-2 focus:ring-indigo-400"></textarea>
+                    <button type="submit" class="w-full py-7 bg-gradient-to-r from-blue-950 to-stone-600 text-white font-bold text-2xl rounded-3xl active:scale-95">SEND MY REQUEST ✨</button>
                 </form>
             </div>
         </div>
@@ -503,7 +503,7 @@
     <footer class="bg-gray-900 text-white py-12 px-4">
         <div class="max-w-7xl mx-auto text-center">
             <div class="flex justify-center mb-6">
-                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-emerald-500 rounded-3xl flex items-center justify-center text-4xl">L</div>
+                <div class="w-12 h-12 bg-gradient-to-br from-blue-950 to-stone-600 rounded-3xl flex items-center justify-center text-4xl">L</div>
             </div>
             <p class="text-xl font-light">LIZA — Empowering people, one transformation at a time.</p>
             <p class="mt-8 text-xs opacity-60">© 2026 Sureka Elezabath (Liza) • Coimbatore, India</p>
@@ -547,7 +547,7 @@
 
         // Tailwind + animations
         window.onload = () => {
-            console.log('%c✅ LIZA — 100% MOBILE OPTIMIZED & READY!', 'background:#2f0766;color:white;padding:4px 12px;border-radius:9999px;font-weight:700');
+            console.log('%c✅ LIZA — 100% MOBILE OPTIMIZED & READY!', 'background:#1e1a4d;color:white;padding:4px 12px;border-radius:9999px;font-weight:700');
             // Simple fade-in for sections
             document.querySelectorAll('section').forEach((s, i) => {
                 if (s.id !== 'home') {
@@ -570,10 +570,10 @@ function updateSlider() {
     // Update active dot
     dots.forEach((dot, index) => {
         if (index === currentSlide) {
-            dot.classList.add('bg-pink-600');
+            dot.classList.add('bg-indigo-600');
             dot.classList.remove('bg-gray-300');
         } else {
-            dot.classList.remove('bg-pink-600');
+            dot.classList.remove('bg-indigo-600');
             dot.classList.add('bg-gray-300');
         }
     });
